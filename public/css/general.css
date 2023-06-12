@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin : 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;;
+}
+
+svg:hover {
+    cursor: pointer;
+}
+
+html{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    width: 100%;
+    height: 10%;
+    background-color: #f7f1ed;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header img{
+    width: 4%;
+    height: 100%;
+}
+
+header h1{
+    color: #2f365f;
+    margin-left: 5px;
+    font-size: x-large;
+}
+
+header nav{
+    width: 60%;
+    height: 100%;
+    background-color: #2f365f;
+}
+
+header nav ul{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+}
+
+header nav ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px #f7f1ed solid;
+    border-right: 2px #f7f1ed solid;
+}
+
+header nav ul li:hover{
+    background-color: #fbe68b;
+}
+
+header nav ul li a{
+    width: 100%;
+    height: 100%;
+    color: #f7f1ed;
+    font-weight: bold;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li:hover a{
+    color: #2f365f;
+}
+
+header .panier{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px #2f365f solid;
+}
+
+header .panier span{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    color: #fbe68b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header .panier img{
+    width: 25px;
+    height: 25px;
+}
+
+header .panier h2{
+    font-size: medium;
+}
+
+.principale{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+}
+
+.principale .gauche{
+    width: 75%;
+    background-color: white;
+    background-size: cover;
+    opacity: 0.8;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: scroll;
+    padding: 5px;
+}
+
+
+.principale .gauche .produit:nth-child(2n+1){
+    background-color: #fbe68b;
+    color: #2f365f;
+    opacity: 0.9;
+    border: 1px white solid;
+}
+
+.principale .gauche .produit:nth-child(2n){
+    background-color: #2f365f;
+    color: #fbe68b;
+    opacity: 0.9;
+    border: 1px white solid;
+}
+
+.produit{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    margin: 5px;
+    border-radius: 3%;
+}
+
+.produit img {
+    width: 30%;
+    height: 30%;
+    max-height: 160px;
+    border-radius: 3%;
+    border: 1px #fbe68b solid;
+    margin: 5px;
+}
+
+.produit .bloc,
+.produit .infos {
+    width: 50%;
+    height: 220px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.produit .bloc .titre,
+.produit .infos .titre {
+    width: 50%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: x-small;
+}
+
+.produit .bloc .titre h2,
+.produit .infos .titre h2 {
+    text-align: center;
+}
+
+.produit .bloc .description {
+    width: 90%;
+    height: 40%;
+    text-align: center;
+}
+
+.principale .gauche .produit:nth-child(2n+1) .bloc .description p{
+    font-size: small;
+    margin: 3px;
+    padding: 3px;
+    border: 1px #2f365f solid ;
+    border-radius: 5%;
+}
+
+.principale .gauche .produit:nth-child(2n) .bloc .description p{
+    font-size: small;
+    margin: 3px;
+    padding: 3px;
+    border: 1px #fbe68b solid ;
+    border-radius: 5%;
+}
+
+.produit .bloc .prix,
+.produit .infos .prix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    height: 40%;
+}
+
+.produit .bloc .prix h2,
+.produit .infos .prix h2{
+    text-align: center;
+}
+
+.produit .bloc .prix button,
+.produit .infos form button{
+    display: inline-block;
+    border-radius: 5px;
+    border: 2px solid #c1c1c1;
+    background-color: #3d5a5b;
+    color: #f7f1ed;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+}
+      
+.produit .bloc .prix button:hover,
+.produit .infos form button:hover{
+    background-color: #d1d1d1;
+    color: #fff;
+}
+      
+.produit .bloc .prix button:active,
+.produit .infos form button:active {
+    background-color: #bbb;
+    color: #fff;
+}
+
+.produit .infos form{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.produit .infos .ajout_panier{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.principale .droite{
+    background-image: url(/src/cov.jpeg);
+    background-size: cover;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer{
+    z-index: 1;
+    width: 100%;
+    background-color: black;
+    font-size:small;
+    color: white;
+}
+
+/*------------------   Bootstrap  ----------------------*/
+
+@media screen and (max-width : 700px) {
+
+    .buttons a{
+        padding: 5px 10px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (max-width : 646px) {
+
+    .principale h1{
+        font-size: 30px;
+    }
+
+    .buttons{
+        margin: 20px;
+    }
+
+    .buttons a{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .buttons a{
+        padding: 5px 10px;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    footer{
+        font-size: 10px;
+    }
+
+    .principale{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width : 320px) {
+
+    .buttons a{
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 60px;
+        text-align: center;
+    }
+
+    .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    footer{
+        font-size: 10px;
+    }
+
+}

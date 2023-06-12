@@ -1,0 +1,65 @@
+.formulaire{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.formulaire p{
+    text-align: center;
+}
+
+.formulaire form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    color: #fbe68b;
+    background-color: #2f365f;
+    border-radius: 3%;
+    opacity: 0.9;
+    padding: 5%;
+}
+
+.formulaire form div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
+}
+
+.formulaire form div input{
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom:2px solid #fbe68b;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.formulaire form div input[placeholder]{
+    color: #c1c1c1;
+}   
+
+.formulaire form button{
+    border-radius: 5px;
+    border: 2px solid #c1c1c1;
+    background-color: #3d5a5b;
+    color: #f7f1ed;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+      
+.formulaire form button:hover{
+    background-color: #d1d1d1;
+    color: #fff;
+}
+      
+.formulaire form button:active {
+    background-color: #bbb;
+    color: #fff;
+}
