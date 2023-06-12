@@ -1,0 +1,175 @@
+.type ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.type ul li {
+    width: 100%;
+    height: 100%;
+    background-color: #2f365f;
+    color: #f7f1ed;
+    margin: 10px;
+    padding: 20px;
+    font-size: medium;
+    text-align: center;
+    border: 2px #fbe68b solid;
+}
+
+.type ul li:hover {
+    border: 2px #2f365f solid;
+    background-color: #fbe68b;
+    color: #2f365f;
+    cursor: pointer;
+}
+
+.type .choisie {
+    border: 2px #2f365f solid;
+    background-color: #fbe68b;
+    color: #2f365f;
+}
+
+.selection:nth-child(2n+1) {
+    font-size: small;
+    margin: 3px;
+    padding: 3px;
+    border: 1px #2f365f solid;
+    background-color: #fbe68b;
+    border-radius: 5px;
+}
+
+.selection:nth-child(2n) {
+    font-size: small;
+    margin: 3px;
+    padding: 3px;
+    border: 1px #fbe68b solid;
+    background-color: #2f365f;
+    border-radius: 5px;
+}
+
+.selection {
+    width: 50%;
+    height: 33%;
+    max-height: 200px;
+    max-height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    opacity: 0.9;
+}
+
+.selection_generale {
+    width: 300%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.selection img {
+    width: 30%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.previous,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous svg,
+.next svg {
+    background-color: #f7f1ed;
+    border: 1px #f7f1ed solid;
+    border-radius: 50%;
+}
+
+#confirmer {
+    width: 30%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #c1c1c1;
+    background-color: #3d5a5b;
+    color: #f7f1ed;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.formulaire_combi {
+    height: 100%;
+    width: 200%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulaire_combi p {
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px #fbe68b solid;
+}
+
+.formulaire_combi form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fbe68b;
+    background-color: #2f365f;
+    border-radius: 3%;
+    opacity: 0.9;
+    padding: 5%;
+    width: 60%;
+}
+
+.formulaire_combi form div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 80%;
+}
+
+.formulaire_combi form div input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 2px solid #fbe68b;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.formulaire_combi form div input[placeholder] {
+    color: #c1c1c1;
+}
+
+.formulaire_combi form button {
+    border-radius: 5px;
+    border: 2px solid #c1c1c1;
+    background-color: #3d5a5b;
+    color: #f7f1ed;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.formulaire_combi form button:hover {
+    background-color: #d1d1d1;
+    color: #fff;
+}
+
+.formulaire_combi form button:active {
+    background-color: #bbb;
+    color: #fff;
+}

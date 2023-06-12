@@ -1,0 +1,67 @@
+.principale-commandes {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cmd:nth-child(2n) {
+  background-color: #2f365f;
+  color: #fbe68b;
+}
+
+.cmd:nth-child(2n+1) {
+  background-color: #fbe68b;
+  color: #2f365f;
+}
+
+.cmd{
+  width: 100%;
+  min-height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-bottom: 4px #f7f1ed solid;
+}
+
+.cmd .name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cmd .prix{
+  font-size: medium;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cmd .consultation{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cmd .consultation button{
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cmd .valide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cmd .valide button{
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: lime;
+  border-radius: 50%;
+  cursor: pointer;
+}

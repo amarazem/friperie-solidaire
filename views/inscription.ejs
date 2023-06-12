@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/connexion.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="droite"></div>
+    <form action="/inscription" method="post">
+        <h1>Formulaire d'inscription</h1>
+        <div>
+            <label for="etat_civil">Etat civil</label>
+            <select name="et_civil" id="et_civil">
+                <option value="M.">M.</option>
+                <option value="Mme.">Mme.</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+
+        <div>
+            <label for="prenom">Prenom</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+
+        <div>
+            <label for="date_naissance">Date de naissance</label>
+            <input type="date" min="" max="" name="date_naissance" required>
+        </div>
+
+        <div>
+            <label for="adresse">Adresse :</label>
+            <input type="texte" id="adresse" name="adresse" placeholder="num. rue. code. ville." required>
+        </div>
+
+        <div>
+            <label for="telephone">Numéro de portable :</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+33 0 12 34 46 78" required>
+        </div>
+
+        <div>
+            <label for="email">Adresse email :</label>
+            <input type="email" id="email" name="email" placeholder="...@gmail.com" required>
+        </div>
+
+        <div>
+            <label for="mot_de_passe">Mot de passe</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+        </div>
+
+        <div>
+            <label for="mot_de_passe_confirmation">Confirmer le mot de passe</label>
+            <input type="password" id="mot_de_passe_confirmation" required>
+        </div>
+
+        <div>
+            <span class="check">
+                <input type="checkbox">
+                <label for="affichage_mot_de_passe">Afficher le mot de passe</label>
+            </span>
+        </div>
+
+        <div class="buttons">
+            <button type="reset" id="reset">Réinitialiser</button>
+            <button type="button" id = connexion>connexion</button>
+            <button type="submit" id="submit">Inscription</button>
+        </div>
+        <h2 style="color: red;"><%= reponse.messageErreur %></h5>
+    </form>
+    
+    <script src="/scripts/inscription.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/accueil.css">
+    <link rel="stylesheet" href="/css/gerant.css">
+	<link rel="stylesheet" href="/css/recherche.css">
+    <link rel="stylesheet" href="/css/modification.css">
+
+    <title>Page de connexion</title>
+</head>
+<body>
+    <header class="headerGerant">
+		<img src="/src/logo/logo.png" alt="" srcset="">
+        <h1>Friperie Solidaire</h1>
+		<nav>
+			<ul>
+				<li><a href="/supprimerGerant">Supprimer</a></li>
+				<li><a href="/ajoutGerant">Ajouter</a></li>
+				<li><a href="/modificationGerant">Modifier</a></li>
+                <li><a href="/commandes">Commandes</a></li>
+			</ul>
+		</nav>
+    </header>
+    <div class="principale">
+        <div class="gauche" style="background-image: url('../src/Index-img/01.jpg');">
+			<% produits.tab.forEach(function(prod) { %>
+				<div class="produit">
+					<img src="<%= prod.image_produit %>" alt="">
+					<div class="bloc">
+						<div class="id" style="display: none;">
+                            <input type = number value="<%= prod.id_produit %>" id="id_produit"></div>
+						<div class="titre"><h2><%= prod.nom_produit %></h2></div>
+						<div class="description"><p><%= prod.description %></p></div>
+						<div class="prix">
+							<h2><%= prod.prix_produit %></h2>
+							<button style="width: 100px;">Modifier</button>
+						</div>
+					</div>
+				</div>
+			<% }); %>
+            <div class="modification" style="display: none;">
+                <form action="/modificationGerant/confirmation" method="post">
+                    <p>Selectionnez le montant à ajouter ou deduire du stock</p>
+                    <div>
+                        <input type = number name="id" id="id" style="display: none;">
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité XS:</label>
+                        <input type = number class="spinner" name="stock_xs">
+                    </div>
+                    <div>
+                        <label for="stock_s">Quantité S:</label>
+                        <input type = number class="spinner" name="stock_s">
+                    </div>
+                    <div>
+                        <label for="stock_m">Quantité M:</label>
+                        <input type = number class="spinner" name="stock_m">
+                    </div>
+                    <div>
+                        <label for="stock_l">Quantité L:</label>
+                        <input type = number class="spinner" name="stock_l">
+                    </div>
+                    <div>
+                        <label for="stock_xl">Quantité XL:</label>
+                        <input type = number class="spinner" name="stock_xl">
+                    </div>
+                    <div>
+                        <label for="stock_xxl">Quantité XXL:</label>
+                        <input type = number class="spinner" name="stock_xxl">
+                    </div>
+                    <div>
+                        <label for="stock_xxxl">Quantité XXXL:</label>
+                        <input type = number class="spinner" name="stock_xxxl">
+                    </div>
+                    <div>
+                        <button type="submit">Confirmer</button>
+                    </div>
+                </form>
+                
+            </div>         
+		</div>
+        <div class="droite">
+            <div class="rechercher">
+                <form action="/modificationGerant" method="post">
+                    <input type="text" placeholder="Rechercher..." name="produit">
+                    <button type="submit"><img src="/src/recherche.png" alt=""></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Chikhaoui Zineddine et Azem Amar, Friperie Solidaire, Progamation Web, Tous droits réservés</p>
+    </footer>
+    <script src="/scripts/index.js"></script>
+	<script src="/scripts/modificationArticle.js"></script>
+</body>
+</html>

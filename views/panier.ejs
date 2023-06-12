@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/accueil.css">
+    <link rel="stylesheet" href="/css/panier.css">
+    <link rel="stylesheet" href="/css/formulaire.css">
+    <title>Page de connexion</title>
+</head>
+<body>
+    <header>
+		<img src="/src/logo/logo.png" alt="" srcset="">
+        <h1>Friperie Solidaire</h1>
+		<nav>
+			<ul>
+				<li><a href="accueil">Accueil</a></li>
+                <li><a href="recherche">Rechercher</a></li>
+				<li><a href="combinaisons">Combinaisons</a></li>
+			</ul>
+		</nav>
+		<div class="panier">
+			<span>0</span>
+			<a href="panier"><img src="/src/ajouter-un-panier.png" alt=""></a>
+			<h2 id="prix">0$</h2>
+            <!-- <a href="#" class="validation" onclick="return false;"><img src="/src/valider.png" alt=""></a> -->
+		</div>
+    </header>
+    <div class="principale-panier">
+        <% produits.tab.forEach(function(prod) { %>
+            <div class="product-description">
+                <p class="id_produit" style="display: none;"><%= prod.id_produit %></p>
+                <div class="product-image">
+                    <img src="<%= prod.image_produit %>" alt="nom-du-produit">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name"><%= prod.nom_produit %></h3>
+                </div>
+                <div class = tailles>
+                    <div>
+                        <label for="stock_xs">Quantité XS:</label>
+                        <input type="number" class="spinner" name="xs" value="0" min="0" max="<%= prod.stock_xs %>">
+                    </div>
+                    <div>
+                        <label for="stock_s">Quantité S:</label>
+                        <input type="number" class="spinner" name="s" value="0" min="0" max="<%= prod.stock_s %>">
+                    </div>
+                    <div>
+                        <label for="stock_m">Quantité M:</label>
+                        <input type="number" class="spinner" name="m" value="0" min="0" max="<%= prod.stock_m %>">
+                    </div>
+                    <div>
+                        <label for="stock_l">Quantité L:</label>
+                        <input type="number" class="spinner" name="l" value="0" min="0" max="<%= prod.stock_l %>">
+                    </div>
+                    <div>
+                        <label for="stock_xl">Quantité XL:</label>
+                        <input type="number" class="spinner" name="xl" value="0" min="0" max="<%= prod.stock_xl %>">
+                    </div>
+                    <div>
+                        <label for="stock_xxl">Quantité XXL:</label>
+                        <input type="number" class="spinner" name="xxl" value="0" min="0" max="<%= prod.stock_xxl %>">
+                    </div>
+                    <div>
+                        <label for="stock_xxxl">Quantité XXXL:</label>
+                        <input type="number" class="spinner" name="xxxl" value="0" min="0" max="<%= prod.stock_xxxl %>">
+                    </div>
+                </div>
+                <div class="acc">
+                    <% if(prod.accessoire === "noeud_papillon") { %>	
+                        <p class="accessoire">Noeud papillon</p>
+                    <% } else if(prod.accessoire === "cravate") { %>	
+                        <p class="accessoire">Cravate</p>
+                    <% } else if(prod.accessoire === "pochette") { %>
+                        <p class="accessoire">Pochette</p>
+                    <% } else if(prod.accessoire === "ceinture") { %>
+                        <p class="accessoire">Ceinture</p>
+                    <% } else if(prod.accessoire === "bretelles") { %>
+                        <p class="accessoire">Bretelles</p>
+                    <% } else if(prod.accessoire === "aucun") { %>
+                        <p class="accessoire">Pas d&apos;accessoires</p>
+                    <% } %>
+                </div>
+                <div class="product-price">
+                    <p class="product-price-value" style="display: none;"><%= prod.prix_produit %>$</p>
+                    <p class="product-price-value2">0$</p>
+                </div>
+                <div class="product-actions">
+                    <form action="/panier" method="post">
+                        <input type="hidden" name="prix" value="<%= prod.prix_produit %>">
+                        <input type="hidden" name="suppression" value="true">
+                        <input type="hidden" name="id" value="<%= prod.id_produit %>">
+                        <button type="submit" class="remove-button">-</button>
+                    </form>
+                
+                </div>
+            </div>
+        <% }); %>
+        <div class="valide">
+            <button class="validation">✔</button>
+        </div>
+    </div>
+
+    <div class="formulaire" style="display: none;">
+        
+        <p>
+            Pour Confirmer votre commande remplissez ce formulaire.
+        </p>
+        <form action="/panier" method="post" >
+            <input type="hidden" name="suppression" value="false">
+            <input type="text" class="infos" name="infos" style="display: none;">
+            <input type="text" class="prix_commande" name="prix_commande" style="display: none;">
+
+            <div>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom"  placeholder="nom" value="<%= infos_client[0].nom %>" name="nom" required>
+            </div>
+
+            <div>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" value="<%= infos_client[0].prenom %>" placeholder="prenom" required>
+            </div>
+        
+            <div>
+                <label for="adresse">Adresse :</label>
+                <input type="texte" id="adresse" name="adresse" value="<%= infos_client[0].adresse %>" placeholder="num. rue. code. ville." required>
+            </div>
+
+            <div>
+                <label for="telephone">Numéro de portable :</label>
+                <input type="tel" id="telephone" name="telephone" value="<%= infos_client[0].telephone %>" placeholder="+33 0 12 34 46 78" required>
+            </div>
+
+            <div>
+                <label for="email">Adresse email :</label>
+            <input type="email" id="email" name="email" value="<%= infos_client[0].email %>" placeholder="...@gmail.com" required>
+            </div>
+
+            <div>
+                <label for="date">date de livraison souhaitée :</label>
+                <input type="date" id="heure" name="date_livraison" class="date_livraison" required>
+            </div>
+
+            <div>
+                <button type="submit">Confirmer</button>
+            </div>
+        </form>
+    </div>
+    
+    
+      
+      
+    <footer>
+        <p>&copy; Chikhaoui Zineddine et Azem Amar, Friperie Solidaire, Progamation Web, Tous droits réservés</p>
+    </footer>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/panier.js"></script>
+</body>
+</html>

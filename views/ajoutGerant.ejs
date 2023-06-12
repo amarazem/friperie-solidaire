@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/accueil.css">
+    <link rel="stylesheet" href="/css/gerant.css">
+    <link rel="stylesheet" href="/css/ajout.css">
+    <title>Page de connexion</title>
+</head>
+<body>
+    <header class="headerGerant">
+        <img src="/src/logo/logo.png" alt="" srcset="">
+        <h1>Friperie Solidaire</h1>
+        <nav>
+            <ul>
+				<li><a href="/supprimerGerant">Supprimer</a></li>
+				<li><a href="/ajoutGerant">Ajouter</a></li>
+				<li><a href="/modificationGerant">Modifier</a></li>
+                <li><a href="/commandes">Commandes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="principale">
+        <div class="gauche" style="background-image: url('/src/Index-img/01.jpg'); width: 50%;">
+            
+        </div>
+        <div class="droite" style="width: 50%;display: flex;justify-content: center;align-items: center;">
+            <form action="/ajoutGerant" method="post">
+                <p>Remplissez le formulaire pour ajouter un nouvel article au stock</p>
+                <div>
+                    <input type="text" id="nom"  placeholder="Nom de l'article" name="nom" required>
+                </div>
+
+                <div>
+                    <input type="number" step="0.01" id="prix" name="prix" placeholder="Prix de l'article" required>
+                </div>
+            
+                <div>
+                    <input type="texte" id="description" name="description" placeholder="Description de l'article" required>
+                </div>
+
+                <div>
+                    <input type="text" id="image" name="image" placeholder="chemin/vers/image" required>
+                </div>
+
+                <div>
+                <input type="number" min="0" id="stock_xs" name="stock_xs" placeholder="Disponibilite en XS" required>
+                </div>
+
+                <div>
+                    <input type="number" min="0" id="stock_s" name="stock_s" placeholder="Disponibilite en S" required>
+                </div>
+                
+                <div>
+                    <input type="number" min="0" id="stock_m" name="stock_m" placeholder="Disponibilite en M" required>
+                </div>
+                
+                <div>
+                    <input type="number" min="0" id="stock_l" name="stock_l" placeholder="Disponibilite en L" required>
+                </div>
+                
+                <div>
+                    <input type="number" min="0" id="stock_xl" name="stock_xl" placeholder="Disponibilite en XL" required>
+                </div>
+                
+                <div>
+                    <input type="number" min="0" id="stock_xxl" name="stock_xxl" placeholder="Disponibilite en XXL" required>
+                </div>
+                
+                <div>
+                    <input type="number" min="0" id="stock_xxxl" name="stock_xxxl" placeholder="Disponibilite en XXXL" required>
+                </div>
+                
+                <div>
+                    <button type="submit">Confirmer</button>
+                </div>
+                
+            </form>  
+        </div>
+    </div>
+    <footer>
+        <p>&copy; Chikhaoui Zineddine et Azem Amar, Friperie Solidaire, Progamation Web, Tous droits réservés</p>
+    </footer>
+    <script src="/scripts/index.js"></script>
+</body>
+</html>

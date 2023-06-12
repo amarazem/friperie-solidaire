@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/panier.css">
+    <link rel="stylesheet" href="/css/gerant.css">
+    <title>Page de connexion</title>
+</head>
+<body>
+    <header class="headerGerant">
+		<img src="/src/logo/logo.png" alt="" srcset="">
+        <h1>Friperie Solidaire</h1>
+		<nav>
+			<ul>
+				<li><a href="/supprimerGerant">Supprimer</a></li>
+				<li><a href="/ajoutGerant">Ajouter</a></li>
+				<li><a href="/modificationGerant">Modifier</a></li>
+				<li><a href="/commandes">Commandes</a></li>
+			</ul>
+		</nav>
+    </header>
+    <div class="principale-panier">
+        <% produits.tab.forEach(function(prod) { %>
+            <div class="product-description">
+                <p class="id_produit" style="display: none;"><%= prod.id_produit %></p>
+                <div class="product-image">
+                    <img src="<%= prod.image_produit %>" alt="nom-du-produit">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name"><%= prod.nom_produit %></h3>
+                </div>
+                <div class = tailles>
+                    <div>
+                        <label for="stock_xs">Quantité XS: <%= prod.xs %></label>
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité S: <%= prod.s %></label>
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité M: <%= prod.m %></label>
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité L: <%= prod.l %></label>
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité XL: <%= prod.xl %></label>
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité XXL: <%= prod.xxl %></label>
+                    </div>
+                    <div>
+                        <label for="stock_xs">Quantité XXXL: <%= prod.xxxl %></label>
+                    </div>
+                </div>
+                <div class="acc">
+                    <p class="accessoire"><%= prod.accessoire %></p>
+                </div>
+                <div class="product-price">
+                    <p class="product-price-value" style="display: none;"><%= prod.prix_produit %>$</p>
+                    <p class="product-price-value2"><%= prod.prix_produit %>$</p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+      
+    <footer>
+        <p>&copy; Chikhaoui Zineddine et Azem Amar, Friperie Solidaire, Progamation Web, Tous droits réservés</p>
+    </footer>
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/panier.js"></script>
+</body>
+</html>

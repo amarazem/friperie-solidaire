@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="/css/connexion.css">
+
+    <title>Page de connexion</title>
+</head>
+<body>
+  <form action="/connexion" method="post">
+    <h1>Connexion</h1>
+    <label for="email">Email :</label>
+    <input type="text" id="email" name="email" required>
+    <br><br>
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+    <input type="submit" value="Se connecter">
+    <h2 style="color: red;"><%= reponse.messageErreur %></h5>
+  </form>
+</body>
+</html>
